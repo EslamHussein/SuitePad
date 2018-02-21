@@ -6,6 +6,7 @@
       <module fileurl="file://$PROJECT_DIR$/HTTPProxyServer/HTTPProxyServer.iml" filepath="$PROJECT_DIR$/HTTPProxyServer/HTTPProxyServer.iml" />
       <module fileurl="file://$PROJECT_DIR$/Presentation/Presentation.iml" filepath="$PROJECT_DIR$/Presentation/Presentation.iml" />
       <module fileurl="file://$PROJECT_DIR$/Suitepad.iml" filepath="$PROJECT_DIR$/Suitepad.iml" />
+      <module fileurl="file://$PROJECT_DIR$/commanconstant/commanconstant.iml" filepath="$PROJECT_DIR$/commanconstant/commanconstant.iml" />
     </modules>
   </component>
 </project>

@@ -19,11 +19,11 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation supportDependencies.appCompat
     implementation supportDependencies.constraintLayout
     testImplementation supportDependencies.jUnit
     androidTestImplementation supportDependencies.testRunner
     androidTestImplementation supportDependencies.espressoCore
-
+    implementation project(':commanconstant')
 }

@@ -24,11 +24,15 @@ android {
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
-
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation supportDependencies.appCompat
     implementation supportDependencies.constraintLayout
     testImplementation supportDependencies.jUnit
     androidTestImplementation supportDependencies.testRunner
     androidTestImplementation supportDependencies.espressoCore
+    implementation 'com.koushikdutta.async:androidasync:2.2.1'
+    implementation libraries.gson
+    implementation libraries.rxjava
+    implementation libraries.rxandroid
+    implementation project(':commanconstant')
 }

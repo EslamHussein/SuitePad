@@ -11,6 +11,7 @@
             <option value="$PROJECT_DIR$/DataSource" />
             <option value="$PROJECT_DIR$/HTTPProxyServer" />
             <option value="$PROJECT_DIR$/Presentation" />
+            <option value="$PROJECT_DIR$/commanconstant" />
           </set>
         </option>
         <option name="resolveModulePerSourceSet" value="false" />

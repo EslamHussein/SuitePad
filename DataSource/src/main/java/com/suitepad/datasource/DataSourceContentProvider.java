@@ -9,6 +9,9 @@ import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 
+import com.suitepad.commanconstant.MenuContract;
+import com.suitepad.commanconstant.MenuItem;
+
 import java.util.ArrayList;
 
 /**
@@ -51,7 +54,6 @@ public class DataSourceContentProvider extends ContentProvider {
 
         }
 
-
     }
 
     @Nullable
@@ -90,16 +92,15 @@ public class DataSourceContentProvider extends ContentProvider {
 
         Object[] row = new Object[5];
 
-
         ArrayList<MenuItem> dataSource = MenuDataSource.getMenusItem();
         for (int i = 0; i < dataSource.size(); i++) {
 
             MenuItem menuItem = dataSource.get(i);
-            row[0] = i + 1;
-            row[1] = menuItem.getUUID();
-            row[2] = menuItem.getName();
-            row[3] = menuItem.getPrice();
-            row[4] = menuItem.getType();
+            row[MenuContract.MenuEntryIndex.COLUMN_ID] = i + 1;
+            row[MenuContract.MenuEntryIndex.COLUMN_UUID] = menuItem.getUUID();
+            row[MenuContract.MenuEntryIndex.COLUMN_NAME] = menuItem.getName();
+            row[MenuContract.MenuEntryIndex.COLUMN_PRICE] = menuItem.getPrice();
+            row[MenuContract.MenuEntryIndex.COLUMN_TYPE] = menuItem.getType();
             menuItemsCursor.addRow(row);
         }
 

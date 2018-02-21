@@ -5,6 +5,10 @@ ext {
     jUnitVersion = '4.12'
     testRunnerVersion = '1.0.1'
     espressoCoreVersion = '3.0.1'
+    okhttpVersion = '3.9.1'
+    rxAndroidVersion = '2.0.1'
+    rxJava = '2.1.7'
+
     //Support Libraries dependencies
     supportDependencies = [
             appCompat       : "com.android.support:appcompat-v7:${supportLibraryVersion}",
@@ -12,6 +16,14 @@ ext {
             jUnit           : "junit:junit:${jUnitVersion}",
             testRunner      : "com.android.support.test:runner:${testRunnerVersion}",
             espressoCore    : "com.android.support.test.espresso:espresso-core:${espressoCoreVersion}"
+    ]
+
+    gsonVersion = '2.8.2'
+    libraries = [
+            gson     : "com.google.code.gson:gson:${gsonVersion}",
+            okhttp   : "com.squareup.okhttp3:okhttp:${okhttpVersion}",
+            rxandroid: "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
+            rxjava   : "io.reactivex.rxjava2:rxjava:${rxJava}"
     ]
 
 }

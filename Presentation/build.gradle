@@ -32,4 +32,5 @@ dependencies {
     testImplementation supportDependencies.jUnit
     androidTestImplementation supportDependencies.testRunner
     androidTestImplementation supportDependencies.espressoCore
+    implementation libraries.okhttp
 }
