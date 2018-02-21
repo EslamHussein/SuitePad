@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/DataSource/DataSource.iml" filepath="$PROJECT_DIR$/DataSource/DataSource.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HTTPProxyServer/HTTPProxyServer.iml" filepath="$PROJECT_DIR$/HTTPProxyServer/HTTPProxyServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Presentation/Presentation.iml" filepath="$PROJECT_DIR$/Presentation/Presentation.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Suitepad.iml" filepath="$PROJECT_DIR$/Suitepad.iml" />
+    </modules>
+  </component>
+</project>

@@ -1,0 +1,6 @@
+<resources>
+    <string name="app_name">SuitePad</string>
+    <string name="content_authority">com.suitepad.datasource</string>
+    <string name="content_provider_menu_read_permission">com.suitepad.datasource.permission.READ</string>
+
+</resources>

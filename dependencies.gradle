@@ -1,0 +1,17 @@
+ext {
+    //Version
+    supportLibraryVersion = '27.0.2'
+    constraintVersion = '1.0.2'
+    jUnitVersion = '4.12'
+    testRunnerVersion = '1.0.1'
+    espressoCoreVersion = '3.0.1'
+    //Support Libraries dependencies
+    supportDependencies = [
+            appCompat       : "com.android.support:appcompat-v7:${supportLibraryVersion}",
+            constraintLayout: "com.android.support.constraint:constraint-layout:${constraintVersion}",
+            jUnit           : "junit:junit:${jUnitVersion}",
+            testRunner      : "com.android.support.test:runner:${testRunnerVersion}",
+            espressoCore    : "com.android.support.test.espresso:espresso-core:${espressoCoreVersion}"
+    ]
+
+}
