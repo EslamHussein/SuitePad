@@ -16,7 +16,5 @@ public interface MenuRepo  {
 
     Observable<String> getMenuItems();
 
-    Observable<String> getTest();
-
 
 }

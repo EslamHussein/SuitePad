@@ -32,7 +32,6 @@ public class ServerPresenterImpl implements ServerPresenter, HttpServerRequestCa
 
     @Override
     public void onCreate() {
-        Log.d(TAG, "onCreate() returned: ");
         compositeDisposable = new CompositeDisposable();
         menuRepo = new MenuRepoImpl();
 
@@ -40,7 +39,6 @@ public class ServerPresenterImpl implements ServerPresenter, HttpServerRequestCa
 
     @Override
     public void startServer() {
-        Log.d(TAG, "startServer() returned: ");
         server.get("/file.json", this);
         server.listen(mAsyncServer, 8080);
 
@@ -48,7 +46,6 @@ public class ServerPresenterImpl implements ServerPresenter, HttpServerRequestCa
 
     @Override
     public void onDestroy() {
-        Log.d(TAG, "onDestroy() returned: ");
         server.stop();
         mAsyncServer.stop();
         compositeDisposable.clear();
@@ -57,30 +54,26 @@ public class ServerPresenterImpl implements ServerPresenter, HttpServerRequestCa
     @Override
     public void onRequest(AsyncHttpServerRequest request, final AsyncHttpServerResponse response) {
 
-
-        Log.d(TAG, "onRequest() returned: ");
-//        response.send(menuRepo.getTest());
         compositeDisposable.add(menuRepo.getMenuItems().subscribeOn(Schedulers.newThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(new DisposableObserver<String>() {
                     @Override
                     public void onNext(String s) {
-                        Log.d(TAG, "onNext() returned: " + s);
                         response.send(s);
 
                     }
 
                     @Override
                     public void onError(Throwable e) {
-                        Log.d(TAG, "onError() returned: " + e.getLocalizedMessage());
+
+                        response.send("[]"); // return empty  list
+
                     }
 
                     @Override
                     public void onComplete() {
-                        Log.d(TAG, "onComplete() returned: ");
                     }
                 }));
-
 
     }
 }

@@ -80,6 +80,10 @@ public class DataSourceContentProvider extends ContentProvider {
     }
 
 
+    /**
+     * Create  MatrixCursor of Menu Items
+     * @return MatrixCursor
+     */
     private MatrixCursor getMenuData() {
 
 

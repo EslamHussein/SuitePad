@@ -27,15 +27,12 @@ public class HTTPProxyService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-
         serverPresenter = new ServerPresenterImpl();
         serverPresenter.onCreate();
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-
-        Log.d(TAG, "onStartCommand() returned: " + flags);
 
 
         serverPresenter.startServer();
@@ -47,9 +44,6 @@ public class HTTPProxyService extends Service {
     public void onDestroy() {
         super.onDestroy();
         serverPresenter.onDestroy();
-
-        Log.d(TAG, "onDestroy() returned: ");
-
 
     }
 

@@ -38,22 +38,18 @@ public class MenuRepoImpl implements MenuRepo {
                 String response = gson.toJson(menuItems);
 
 
-                return /*"[{\"id\": \"58ab140932dfbcc4253b5236\",\"name\":\"consectetur\",\"price\": 1200,\"type\": \"main course\"}]"*/ response;
+                return  response;
             }
         });
     }
 
 
-    @Override
-    public Observable<String> getTest() {
-        return Observable.fromCallable(new Callable<String>() {
-            @Override
-            public String call() throws Exception {
-                return "[{\"id\": \"58ab140932dfbcc4253b5236\",\"name\":\"consectetur\",\"price\": 1200,\"type\": \"main course\"}]";
-            }
-        });
-    }
-
+    /**
+     * Get Menu items from Cursor
+     *
+     * @param cursor
+     * @return
+     */
     private List<MenuItem> getItemsFromCursor(Cursor cursor) {
 
         List<MenuItem> menuItems = new ArrayList<>();
