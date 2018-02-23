@@ -13,7 +13,7 @@ In this repo you will find **Four Modules** in **One Android Project**
 
 ## 1. Commanconstant 
 
-This module is a common module have content provider Constance like __AUTHORITY__ , __BASE\_CONTENT\_URI__ , __COLUMN\_UUID__,__MenuEntryIndex__ and common DTOs.
+is a common module has content provider Constant like __AUTHORITY__ , __BASE\_CONTENT\_URI__ , __COLUMN\_UUID__,__MenuEntryIndex__ and common DTOs.
 I used this module in DataSource and HTTPProxyServer modules.
 
 
@@ -62,14 +62,14 @@ I used some of libraries to implement this module :
 
 ### How To Use?
 
-To **Start** the server to can use the code below:
+To **Start** the server use the code below:
 
 	Intent intent = new Intent();
 	intent.setComponent(new ComponentName("com.suitepad.httpproxyserver","com.suitepad.httpproxyserver.HTTPProxyService"));
     startService(intent);
     
 
-To **Stop** the server to can use the code below:
+To **Stop** the server use the code below:
 	
 	 Intent intent = new Intent();
 	 intent.setComponent(new ComponentName("com.suitepad.httpproxyserver", "com.suitepad.httpproxyserver.HTTPProxyService"));
