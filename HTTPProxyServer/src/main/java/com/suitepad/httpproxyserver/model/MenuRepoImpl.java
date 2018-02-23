@@ -27,9 +27,9 @@ public class MenuRepoImpl implements MenuRepo {
             @Override
             public String call() throws Exception {
 
-                Uri categoryContentProvider = Uri.parse("content://com.suitepad.datasource/menu");
+                Uri menuContentProviderUri = MenuContract.MenuEntry.CONTENT_URI;
 
-                Cursor menuItemsCursor = App.get().getContentResolver().query(categoryContentProvider, null,
+                Cursor menuItemsCursor = App.get().getContentResolver().query(menuContentProviderUri, null,
                         null, null, null);
 
                 List<MenuItem> menuItems = getItemsFromCursor(menuItemsCursor);

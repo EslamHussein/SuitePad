@@ -10,3 +10,9 @@
 DataSource/libs/
 HTTPProxyServer/libs/
 Presentation/libs/
+/.idea/misc.xml
+DataSource/release/
+DataSource/src/main/res/layout/
+HTTPProxyServer/src/main/res/layout/
+commanconstant/libs/
+commanconstant/src/main/res/drawable/

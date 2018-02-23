@@ -7,7 +7,8 @@ ext {
     espressoCoreVersion = '3.0.1'
     okhttpVersion = '3.9.1'
     rxAndroidVersion = '2.0.1'
-    rxJava = '2.1.7'
+    rxJavaVersion = '2.1.7'
+    androidasyncVersion = '2.2.1'
 
     //Support Libraries dependencies
     supportDependencies = [
@@ -23,7 +24,8 @@ ext {
             gson     : "com.google.code.gson:gson:${gsonVersion}",
             okhttp   : "com.squareup.okhttp3:okhttp:${okhttpVersion}",
             rxandroid: "io.reactivex.rxjava2:rxandroid:${rxAndroidVersion}",
-            rxjava   : "io.reactivex.rxjava2:rxjava:${rxJava}"
+            rxjava   : "io.reactivex.rxjava2:rxjava:${rxJavaVersion}",
+            androidasync:"com.koushikdutta.async:androidasync:${androidasyncVersion}"
     ]
 
 }

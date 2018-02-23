@@ -20,8 +20,6 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-    implementation supportDependencies.appCompat
-    implementation supportDependencies.constraintLayout
     testImplementation supportDependencies.jUnit
     androidTestImplementation supportDependencies.testRunner
     androidTestImplementation supportDependencies.espressoCore
