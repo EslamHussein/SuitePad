@@ -56,7 +56,7 @@ I used some of libraries to implement this module :
 
 1. [AndroidAsync](https://github.com/koush/AndroidAsync) to create http server. 
 2. [Gson](https://github.com/google/gson) to serilize the data to Json.
-3. [RxJava & RxAndroid] (https://github.com/ReactiveX/RxAndroid) to handel getting data from content provier in background thread 
+3. [RxJava & RxAndroid](https://github.com/ReactiveX/RxAndroid) to handel getting data from content provier in background thread 
 4. Commanconstant to use The constant of content provider and avoid copy & paste mistacts :)
  
 
