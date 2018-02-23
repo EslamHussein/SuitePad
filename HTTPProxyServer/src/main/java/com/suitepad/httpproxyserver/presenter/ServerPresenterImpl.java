@@ -54,7 +54,7 @@ public class ServerPresenterImpl implements ServerPresenter, HttpServerRequestCa
     @Override
     public void onRequest(AsyncHttpServerRequest request, final AsyncHttpServerResponse response) {
 
-        compositeDisposable.add(menuRepo.getMenuItems().subscribeOn(Schedulers.newThread())
+        compositeDisposable.add(menuRepo.getMenuItems().subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribeWith(new DisposableObserver<String>() {
                     @Override
