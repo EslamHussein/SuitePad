@@ -42,20 +42,20 @@ dependencies {
 
 
 Properties props = new Properties()
-def propFile = new File('presentation_keystore.properties')
+def propFile = new File('signing_keystore.properties')
 if (propFile.canRead()){
     props.load(new FileInputStream(propFile))
 
     if (props!=null && props.containsKey('KEY_STORE_FILE') && props.containsKey('STORE_PASSWORD') &&
             props.containsKey('KEY_ALIAS') && props.containsKey('KEY_PASSWORD')) {
-        println 'presentation_keystore.properties Found'
+        println 'signing_keystore.properties Found'
 
         android.signingConfigs.release.storeFile = file(props['KEY_STORE_FILE'])
         android.signingConfigs.release.storePassword = props['STORE_PASSWORD']
         android.signingConfigs.release.keyAlias = props['KEY_ALIAS']
         android.signingConfigs.release.keyPassword = props['KEY_PASSWORD']
     } else {
-        println 'presentation_keystore.properties found but some entries are missing'
+        println 'signing_keystore.properties found but some entries are missing'
         println(props['KEY_STORE_FILE'])
         println(props['STORE_PASSWORD'])
         println(props['KEY_ALIAS'])
@@ -64,6 +64,6 @@ if (propFile.canRead()){
         android.buildTypes.release.signingConfig = null
     }
 }else {
-    println 'datasource_keystore.properties not found'
+    println 'signing_keystore.properties not found'
     android.buildTypes.release.signingConfig = null
 }
