@@ -81,7 +81,7 @@ This module has an activity ( Webview ) to show the webpage stored in Assets fol
 
 ### Libraries : 
 
-1. [okhttp] (http://square.github.io/okhttp/) to handle API REST calls
+1. [Okhttp](http://square.github.io/okhttp/) to handle API REST calls
 
 ## Note
 The DataSource , HTTPProxyServer and Presentation all of them under the same
