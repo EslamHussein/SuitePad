@@ -98,3 +98,6 @@ This is an Android Studio project using the Gradle build system, to build this p
 3. Android Studio 3 
 4. Gradel Version 3
 
+## Signing APKS
+
+To generate the signed Apks throw Gradle task you will need to change the `KEY_STORE_FILE` variable in signing_keystore.properties file to the current path in your Lab and run this command `./gradlew assembleRelease`  
