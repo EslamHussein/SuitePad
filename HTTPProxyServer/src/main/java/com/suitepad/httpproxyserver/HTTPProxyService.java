@@ -5,10 +5,11 @@ import android.app.Service;
 import android.content.Intent;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
-import android.util.Log;
 
 import com.suitepad.httpproxyserver.presenter.ServerPresenter;
 import com.suitepad.httpproxyserver.presenter.ServerPresenterImpl;
+
+import io.reactivex.disposables.CompositeDisposable;
 
 /**
  * An {@link IntentService} subclass for handling asynchronous task requests in
@@ -27,13 +28,15 @@ public class HTTPProxyService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        serverPresenter = new ServerPresenterImpl();
+        serverPresenter = new ServerPresenterImpl(Injection.provideAsyncHttpServer(),
+                Injection.provideAsyncServer(),
+                new CompositeDisposable(),
+                Injection.provideMenuRepo());
         serverPresenter.onCreate();
     }
 
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
-
 
         serverPresenter.startServer();
         return Service.START_STICKY;
@@ -52,8 +55,6 @@ public class HTTPProxyService extends Service {
     public IBinder onBind(Intent intent) {
         return null;
     }
-
-
 
 
 }

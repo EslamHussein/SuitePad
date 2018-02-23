@@ -7,7 +7,6 @@ import com.koushikdutta.async.http.server.AsyncHttpServerRequest;
 import com.koushikdutta.async.http.server.AsyncHttpServerResponse;
 import com.koushikdutta.async.http.server.HttpServerRequestCallback;
 import com.suitepad.httpproxyserver.model.MenuRepo;
-import com.suitepad.httpproxyserver.model.MenuRepoImpl;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
@@ -26,10 +25,16 @@ public class ServerPresenterImpl implements ServerPresenter, HttpServerRequestCa
     private CompositeDisposable compositeDisposable;
     private MenuRepo menuRepo;
 
+
+    public ServerPresenterImpl(AsyncHttpServer server, AsyncServer mAsyncServer, CompositeDisposable compositeDisposable, MenuRepo menuRepo) {
+        this.server = server;
+        this.mAsyncServer = mAsyncServer;
+        this.compositeDisposable = compositeDisposable;
+        this.menuRepo = menuRepo;
+    }
+
     @Override
     public void onCreate() {
-        compositeDisposable = new CompositeDisposable();
-        menuRepo = new MenuRepoImpl();
 
     }
 
