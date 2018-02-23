@@ -10,8 +10,12 @@ android {
         versionName "1.0"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
+    signingConfigs {
+        release
+    }
     buildTypes {
         release {
+            signingConfig signingConfigs.release
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
         }
@@ -25,4 +29,27 @@ dependencies {
     androidTestImplementation supportDependencies.testRunner
     androidTestImplementation supportDependencies.espressoCore
     implementation project(':commanconstant')
+}
+
+
+Properties props = new Properties()
+def propFile = new File('datasource_keystore.properties')
+if (propFile.canRead()){
+    props.load(new FileInputStream(propFile))
+
+    if (props!=null && props.containsKey('KEY_STORE_FILE') && props.containsKey('STORE_PASSWORD') &&
+            props.containsKey('KEY_ALIAS') && props.containsKey('KEY_PASSWORD')) {
+        println 'datasource_keystore.properties Found'
+
+        android.signingConfigs.release.storeFile = file(props['KEY_STORE_FILE'])
+        android.signingConfigs.release.storePassword = props['STORE_PASSWORD']
+        android.signingConfigs.release.keyAlias = props['KEY_ALIAS']
+        android.signingConfigs.release.keyPassword = props['KEY_PASSWORD']
+    } else {
+        println 'datasource_keystore.properties found but some entries are missing'
+        android.buildTypes.release.signingConfig = null
+    }
+}else {
+    println 'datasource_keystore.properties not found'
+    android.buildTypes.release.signingConfig = null
 }
