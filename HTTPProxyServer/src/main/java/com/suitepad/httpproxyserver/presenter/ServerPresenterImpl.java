@@ -1,6 +1,5 @@
 package com.suitepad.httpproxyserver.presenter;
 
-import android.util.Log;
 
 import com.koushikdutta.async.AsyncServer;
 import com.koushikdutta.async.http.server.AsyncHttpServer;
@@ -12,7 +11,6 @@ import com.suitepad.httpproxyserver.model.MenuRepoImpl;
 
 import io.reactivex.android.schedulers.AndroidSchedulers;
 import io.reactivex.disposables.CompositeDisposable;
-import io.reactivex.disposables.Disposable;
 import io.reactivex.observers.DisposableObserver;
 import io.reactivex.schedulers.Schedulers;
 
@@ -22,11 +20,9 @@ import io.reactivex.schedulers.Schedulers;
 
 public class ServerPresenterImpl implements ServerPresenter, HttpServerRequestCallback {
 
+    private static final String TAG = ServerPresenterImpl.class.getSimpleName();
     private AsyncHttpServer server = new AsyncHttpServer();
     private AsyncServer mAsyncServer = new AsyncServer();
-
-    private static final String TAG = ServerPresenterImpl.class.getSimpleName();
-
     private CompositeDisposable compositeDisposable;
     private MenuRepo menuRepo;
 
